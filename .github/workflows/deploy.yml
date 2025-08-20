@@ -12,5 +12,15 @@ jobs:
       - name: Github Repository 불러오기
         uses: actions/checkout@v4
 
-      - name: Repository 파일 출력하기
-        run: ls
+      - name: 의존성 설치하기
+        run: npm i
+
+      - name: build 하기
+        run: npm run build
+
+      - name: Debugging
+        run: |
+          ls
+          echo "-------------------"
+          cd dist
+          ls
