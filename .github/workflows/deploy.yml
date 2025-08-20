@@ -29,3 +29,6 @@ jobs:
         run: |
           aws s3 rm --recursive s3://practice-cloudfront-01
           aws s3 cp ./dist s3://practice-cloudfront-01/ --recursive
+
+      - name: CloudFront 캐시 무효화
+        run: aws cloudfront create-Invalidation --distribution-id E1VMIFC90OGVF7 "/*"
