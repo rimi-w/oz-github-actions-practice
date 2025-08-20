@@ -1,0 +1,16 @@
+name: Deploy To S3 And Invalidate CloudFront
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Repository 불러오기
+        uses: actions/checkout@v4
+
+      - name: Repository 파일 출력하기
+        run: ls
